@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kish | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;
+  --surface:#111118;
+  --card:#16161f;
+  --border:#ffffff12;
+  --accent:#7c6ff7;
+  --accent2:#a78bfa;
+  --text:#f0f0f5;
+  --muted:#888899;
+  --green:#4ade80;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg)cc;backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-weight:700;font-size:1.1rem;letter-spacing:-0.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(ellipse,#7c6ff720 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--border);padding:.35rem 1rem;border-radius:999px;font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.8rem,8vw,5.5rem);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:1.2rem}
+.hero h1 .accent{color:var(--accent)}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.75rem 1.75rem;border-radius:10px;font-size:.9rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* SECTIONS */
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-1px;margin-bottom:.5rem}
+.section-sub{color:var(--muted);margin-bottom:3rem;font-size:1rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-text p{color:var(--muted);font-size:1rem;margin-bottom:1rem}
+.about-text strong{color:var(--text)}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center}
+.stat-num{font-size:2rem;font-weight:800;color:var(--accent)}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent)08,transparent);opacity:0;transition:opacity .3s}
+.project-card:hover{border-color:var(--accent)66;transform:translateY(-3px)}
+.project-card:hover::before{opacity:1}
+.project-icon{width:44px;height:44px;background:var(--accent)22;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
+.project-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.project-card p{font-size:.875rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{background:var(--accent)18;color:var(--accent2);padding:.25rem .75rem;border-radius:999px;font-size:.75rem;font-weight:500}
+.project-links{display:flex;gap:1rem;margin-top:1.25rem}
+.project-links a{font-size:.8rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.project-links a:hover{color:var(--accent)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.skill-group{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem}
+.skill-group h4{font-size:.9rem;font-weight:600;margin-bottom:1rem;color:var(--text)}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-pill{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:.3rem .85rem;border-radius:999px;font-size:.8rem;transition:all .2s}
+.skill-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+/* CONTACT */
+.contact-wrapper{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3rem;text-align:center;position:relative;overflow:hidden}
+.contact-wrapper::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(ellipse,var(--accent)18 0%,transparent 70%);pointer-events:none}
+.contact-wrapper p{color:var(--muted);max-width:480px;margin:1rem auto 2rem;font-size:1rem}
+.social-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.social-link{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--muted);text-decoration:none;font-size:.85rem;transition:all .2s}
+.social-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .about-grid{grid-template-columns:1fr}
+  nav{padding:.75rem 1rem}
+  .nav-links{gap:1rem}
+}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">kish<span>.</span>dev</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-badge"><span class="dot"></span> Open to opportunities</div>
+    <h1>Hey, I'm <span class="accent">Kish</span> 👋<br>I build cool stuff.</h1>
+    <p>CS student at PES University · Full-stack dev · Love turning ideas into real products.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="https://github.com/kishorm3795" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <div class="section-label">About me</div>
+      <div class="section-title">Builder. Thinker.<br>Problem solver.</div>
+      <p>I'm a <strong>Computer Science student at PES University</strong> who loves building things that actually work. From OS-level multithreaded programs to full-stack web apps — I'm always shipping.</p>
+      <p>Currently deep into <strong>Next.js, C systems programming,</strong> and entrepreneurship. Always up for a good build challenge.</p>
+      <div style="margin-top:1.5rem">
+        <a href="https://linkedin.com/in/kish" class="btn btn-primary" style="font-size:.85rem">Let's Connect</a>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Projects built</div></div>
+      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Languages mastered</div></div>
+      <div class="stat-card"><div class="stat-num">PES</div><div class="stat-label">University, Bangalore</div></div>
+      <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Hours debugging</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <div class="section-label">Projects</div>
+    <div class="section-title">Things I've built</div>
+    <div class="section-sub">A mix of web apps, systems projects, and experiments.</div>
+  </div>
+  <div class="projects-grid reveal">
+
+    <div class="project-card">
+      <div class="project-icon">🤖</div>
+      <h3>Guide-AI</h3>
+      <p>AI-powered guidance platform built with Next.js. Full-stack app with smart recommendations and a clean, modern UI.</p>
+      <div class="tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">React</span>
+        <span class="tag">AI</span>
+        <span class="tag">TypeScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kishorm3795">GitHub ↗</a>
+        <a href="#">Live Demo ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">⚔️</div>
+      <h3>Clash Royale Battle Sim</h3>
+      <p>Multithreaded C program simulating a Clash Royale battle with producer-consumer patterns, mutex locks, and semaphores.</p>
+      <div class="tags">
+        <span class="tag">C</span>
+        <span class="tag">Multithreading</span>
+        <span class="tag">OS Concepts</span>
+        <span class="tag">POSIX</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kishorm3795">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🌐</div>
+      <h3>GitHub Profile Showcase</h3>
+      <p>Crafted a polished GitHub profile README with Capsule Render, GitHub Stats (Tokyo Night theme), and dynamic badges.</p>
+      <div class="tags">
+        <span class="tag">Markdown</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Design</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kishorm3795">View Profile ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">📡</div>
+      <h3>Twilio + ngrok Integration</h3>
+      <p>Set up real-time communication pipeline using Twilio API and ngrok tunneling for local webhook development on Mac.</p>
+      <div class="tags">
+        <span class="tag">Twilio</span>
+        <span class="tag">ngrok</span>
+        <span class="tag">Python</span>
+        <span class="tag">APIs</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/kishorm3795">GitHub ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">Skills</div>
+    <div class="section-title">My toolkit</div>
+    <div class="section-sub">Technologies and concepts I work with.</div>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <h4>⚡ Languages</h4>
+      <div class="skill-pills">
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>🚀 Frameworks & Tools</h4>
+      <div class="skill-pills">
+        <span class="skill-pill">Next.js</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">GitHub</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>🧠 CS Fundamentals</h4>
+      <div class="skill-pills">
+        <span class="skill-pill">OS & Threading</span>
+        <span class="skill-pill">Algorithms</span>
+        <span class="skill-pill">Data Structures</span>
+        <span class="skill-pill">Synchronization</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>🛠 Other</h4>
+      <div class="skill-pills">
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">Twilio</span>
+        <span class="skill-pill">ngrok</span>
+        <span class="skill-pill">NumPy</span>
+        <span class="skill-pill">SciPy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper reveal">
+    <div class="section-label" style="text-align:center">Contact</div>
+    <div class="section-title" style="text-align:center">Let's build something.</div>
+    <p>I'm always open to interesting projects, collabs, or just a good tech convo. Hit me up!</p>
+    <a href="mailto:kish@example.com" class="btn btn-primary">Say Hello ✉️</a>
+    <div class="social-links">
+      <a href="https://github.com/kishorm3795" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/kish" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://instagram.com/kish" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with ❤️ by Kish · 2025</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
