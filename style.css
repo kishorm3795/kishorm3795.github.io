@@ -54,19 +54,8 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -3;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-#video-background iframe {
-    width: 100vw;
-    height: 56.25vw; /* 16:9 */
-    min-height: 100vh;
-    min-width: 177.77vh; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
     pointer-events: none;
 }
 

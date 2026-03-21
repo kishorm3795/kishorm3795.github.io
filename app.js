@@ -238,9 +238,20 @@ function animateTronGrid() {
     requestAnimationFrame(animateTronGrid);
 }
 
-// Disable animation since we are using the Interstellar video background
-// initTronGrid();
-// animateTronGrid();
+// Ensure video plays continuously and restarts if needed
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('video-background');
+    video.play().catch(e => console.log('Video autoplay prevented:', e));
+    
+    video.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    });
+    
+    // Disable animation since using video background
+    // initTronGrid();
+    // animateTronGrid();
+});
 
 // Smooth resize handling
 let resizeTimeout;
