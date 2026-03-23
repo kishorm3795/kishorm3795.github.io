@@ -317,15 +317,52 @@ section { padding: 60px 10%; }
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
-.card-image { overflow: hidden; height: 260px; }
-.card-image img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    opacity: 0.9; 
-    transition: 0.5s; 
+/* --- GIF / Image preview container --- */
+.card-image {
+    overflow: hidden;
+    height: 220px;
+    border-radius: 16px 16px 0 0;  /* match card top corners */
+    position: relative;
 }
-.project-card:hover img { opacity: 1; transform: scale(1.08); }
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.88;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity  0.4s ease;
+    display: block;
+    /* keep aspect ratio intact — no stretching */
+    will-change: transform;
+}
+
+/* Subtle gradient shimmer overlay on hover */
+.card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 107, 107, 0.12) 0%,
+        rgba(255, 167, 38,  0.10) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.project-card:hover .card-image img {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.project-card:hover .card-image::after {
+    opacity: 1;
+}
 
 .card-content { padding: 35px; }
 .card-content h3 { 
@@ -725,7 +762,7 @@ footer {
 
     /* 6. Projects Grid */
     .project-grid { grid-template-columns: 1fr; gap: 30px; }
-    .card-image { height: 200px; }
+    .card-image { height: 190px; }
     .card-content { padding: 25px; }
     /* Disable hover lift on touch devices */
     .project-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
