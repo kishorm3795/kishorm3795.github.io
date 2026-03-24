@@ -1,2 +1,3 @@
-# kishorm3795.github.io
-my website
+# Welcome to your Lovable project
+
+TODO: Document your project here
