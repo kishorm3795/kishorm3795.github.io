@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Instagram } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const socials = [
   { icon: Mail, label: "Email", href: "mailto:kishorm3795@gmail.com", display: "kishorm3795@gmail.com" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/pavan-kishor-m", display: "pavan-kishor-m" },
   { icon: Github, label: "GitHub", href: "https://github.com/kishorm3795", display: "kishorm3795" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/pavan_kishor.m/?hl=en", display: "@pavan_kishor.m" },
 ];
 
 const ContactSection = () => {
@@ -19,7 +18,7 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
-            Get In <span className="text-gradient">Touch</span>
+            Let's <span className="text-gradient">Connect</span>
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full mb-6 mx-auto" />
           <p className="text-muted-foreground mb-10 max-w-md mx-auto">

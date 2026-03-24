@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["Python", "JavaScript", "C", "SQL", "C#"],
+    skills: ["Python", "JavaScript", "C", "SQL"],
   },
   {
     title: "Frameworks & Libraries",
@@ -15,7 +15,7 @@ const skillCategories = [
   },
   {
     title: "AI / ML",
-    skills: ["Transformers (HuggingFace)", "LLM APIs", "RAG Pipelines", "Vector Search", "Deep Learning"],
+    skills: ["LLM APIs", "RAG Pipelines", "Vector Search", "Deep Learning"],
   },
   {
     title: "Tools",

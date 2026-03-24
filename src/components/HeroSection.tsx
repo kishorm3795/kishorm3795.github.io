@@ -18,7 +18,7 @@ const HeroSection = () => {
             Pavan Kishor M
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg">
-            Full-Stack Developer &{" "}
+            Frontend Developer &{" "}
             <span className="text-gradient font-semibold">AI/ML Enthusiast</span>
           </p>
           <p className="text-muted-foreground mb-10 max-w-md leading-relaxed">
