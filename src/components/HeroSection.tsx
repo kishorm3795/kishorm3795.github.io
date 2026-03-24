@@ -17,11 +17,11 @@ const HeroSection = () => {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Pavan Kishor M
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-lg">
             Frontend Developer &{" "}
             <span className="text-gradient font-semibold">AI/ML Enthusiast</span>
           </p>
-          <p className="text-muted-foreground mb-10 max-w-md leading-relaxed">
+          <p className="text-white/90 mb-10 max-w-md leading-relaxed text-lg">
             B.Tech CSE (AI/ML) student at PES University building intelligent applications 
             with modern web technologies and machine learning pipelines.
           </p>
@@ -65,7 +65,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-primary transition-colors"
       >
         <ArrowDown size={20} className="animate-bounce" />
       </motion.a>

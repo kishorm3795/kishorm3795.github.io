@@ -54,15 +54,15 @@ const ExperienceSection = () => {
               <div className="p-5 rounded-xl bg-card border border-border">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
                   <Briefcase size={14} className="text-primary" />
-                  <h3 className="font-heading font-semibold text-foreground">{exp.role}</h3>
+                  <h3 className="font-heading font-semibold text-white">{exp.role}</h3>
                 </div>
                 <p className="text-sm text-primary font-medium">{exp.org}</p>
-                <p className="text-xs text-muted-foreground mb-3">
+                <p className="text-sm text-white/80 mb-3">
                   {exp.period} · {exp.type}
                 </p>
                 <ul className="space-y-2">
                   {exp.bullets.map((b, j) => (
-                    <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
+                    <li key={j} className="text-base text-white/85 leading-relaxed flex gap-2">
                       <span className="text-primary mt-1.5 shrink-0">•</span>
                       {b}
                     </li>

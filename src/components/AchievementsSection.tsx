@@ -38,19 +38,19 @@ const AchievementsSection = () => {
         {icon}
         <h3 className="font-sans font-semibold text-xl text-white">Oracle Academy Certifications</h3>
       </div>
-      <p className="text-sm text-cyan-400 font-medium mb-3">Oracle Academy</p>
-      <p className="text-xs text-white/60 mb-4">2025 · Professional Certifications</p>
+      <p className="text-base text-cyan-400 font-medium mb-3">Oracle Academy</p>
+      <p className="text-sm text-white/80 mb-4">2025 · Professional Certifications</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {certs.map((cert, j) => (
           <div key={j} className="flex flex-col gap-2 p-3 border border-white/10 rounded-lg hover:border-cyan-400/50 transition-all bg-black/20 hover:bg-black/30">
-            <span className="text-sm text-white/70">
+            <span className="text-sm text-white/90">
               <span className="text-cyan-400 mr-2">•</span>
               {cert.title}
             </span>
-            <button 
-              onClick={() => openCert(cert)}
-              className="flex items-center gap-2 text-xs text-cyan-400 hover:text-cyan-300 transition-colors group self-start"
-            >
+              <button 
+                onClick={() => openCert(cert)}
+                className="flex items-center gap-2 text-sm text-cyan-400 hover:text-white transition-colors group self-start font-medium"
+              >
               <ExternalLink size={14} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
               View Certificate
             </button>

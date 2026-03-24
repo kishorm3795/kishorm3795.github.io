@@ -15,7 +15,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full mb-8" />
 
-          <p className="text-muted-foreground leading-relaxed mb-10 max-w-2xl text-lg">
+          <p className="text-white/90 leading-relaxed mb-10 max-w-2xl text-xl">
             I'm a B.Tech CSE (AI/ML) student at PES University with hands-on experience in
             frontend development, AI/ML pipelines, and UI/UX design. I've built 7+ projects
             using Python, React.js, FastAPI, and MongoDB. I'm Oracle-certified in Generative AI
