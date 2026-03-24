@@ -9,7 +9,7 @@ const projects = [
     tech: ["Python", "Transformers", "FastAPI", "React.js", "Vector DB"],
     status: "In Progress",
     github: "#",
-    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "G-M8",
@@ -18,7 +18,7 @@ const projects = [
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "Completed",
     github: "#",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Guide-AI",
@@ -27,7 +27,7 @@ const projects = [
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "Completed",
     github: "#",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "CodeBuddy",
@@ -36,7 +36,7 @@ const projects = [
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "In Progress",
     github: "#",
-    image: "https://images.unsplash.com/photo-1436891620584-47fd0e565afb?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
   },
 ];
 

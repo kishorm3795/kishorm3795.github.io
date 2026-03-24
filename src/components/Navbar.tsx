@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
-  { label: "Credentials", href: "#experience" },
+
 ];
 
 const Navbar = () => {
@@ -46,13 +46,13 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-5">
+        <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <motion.a
                 href={link.href}
                 whileHover={{ scale: 1.05, textShadow: "0px 0px 12px rgba(255,255,255,0.7)" }}
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 block tracking-wide"
+                className="text-base font-medium text-white/70 hover:text-white transition-colors duration-300 block tracking-wide"
               >
                 {link.label}
               </motion.a>
@@ -65,7 +65,7 @@ const Navbar = () => {
           href="#contact"
           whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255,255,255,0.2)" }}
           whileTap={{ scale: 0.95 }}
-          className="hidden md:block px-5 py-2 text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all tracking-wide"
+          className="hidden md:block px-5 py-2 text-base font-medium text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all tracking-wide"
         >
           Let's Connect
         </motion.a>
