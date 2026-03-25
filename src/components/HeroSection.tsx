@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
@@ -61,13 +61,17 @@ const HeroSection = () => {
       </div>
 
       <motion.a
-        href="#about"
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-primary transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-primary transition-colors cursor-pointer"
       >
-        <ArrowDown size={20} className="animate-bounce" />
+        <ArrowUp size={20} className="animate-bounce" />
       </motion.a>
     </section>
   );

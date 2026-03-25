@@ -5,19 +5,18 @@ const projects = [
   {
     title: "Nano-PESU",
     description:
-      "University-centric AI learning agent using RAG pipeline. Handles asset upload → vectorization → vector DB storage with LLM-powered contextual query resolution. Maps AI-generated answers to relevant lecture slides and textbook sections via clickable hyperlinks.",
-    tech: ["Python", "Transformers", "FastAPI", "React.js", "Vector DB"],
+      "Modern frontend dashboard for university AI learning agent. Interactive RAG-powered interface with asset management, contextual query results, and clickable hyperlinks to lecture slides/textbook sections.",
+    tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "TypeScript"],
     status: "In Progress",
-    github: "#",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "G-M8",
     description:
-      "Real-time collaboration platform for teachers and students: team management, live chat, and project tracking.",
-    tech: ["React.js", "JavaScript", "MongoDB"],
+      "Frontend for real-time collaboration platform with dynamic team dashboards, live chat UI, and intuitive project tracking interface.",
+    tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     status: "Completed",
-    github: "#",
+    github: "https://github.com/kishorm3795/G-M8",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop"
   },
   {
@@ -26,7 +25,7 @@ const projects = [
       "AI tool recommender that suggests the best AI tool for user workflows — research, editing, coding, voice, and more.",
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "Completed",
-    github: "#",
+    github: "https://github.com/kishorm3795/Guide-AI",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
   },
   {
@@ -35,7 +34,7 @@ const projects = [
       "AI-powered coding assistant with collaborative real-time code editing and curated learning resources.",
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "In Progress",
-    github: "#",
+    github: "https://github.com/kishorm3795/codebuddy",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
   },
 ];
@@ -114,6 +113,7 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
+{project.github && (
                 <a
                   href={project.github}
                   target="_blank"
@@ -121,9 +121,10 @@ const ProjectsSection = () => {
                   className="inline-flex w-fit items-center gap-2 text-sm font-medium text-white/70 hover:text-cyan-400 transition-colors duration-300 group-hover:glow-text"
                 >
                   <Github size={16} />
-                  {project.title === "Nano-PESU" ? "Reference Project" : "View Repository"}
+                  View Project
                   <ExternalLink size={14} className="ml-1 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </a>
+              )}
               </div>
             </motion.div>
           ))}
