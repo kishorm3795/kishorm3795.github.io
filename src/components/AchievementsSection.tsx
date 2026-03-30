@@ -8,16 +8,16 @@ interface Cert {
 }
 
 const oracleCerts: Cert[] = [
-  { title: "OCI 2025 — Generative AI Professional", img: "/certificates/Oracle cloud Generative AI.jpeg" },
-  { title: "Oracle AI Vector Search Certified Professional", img: "/certificates/Oracle AI Vector.jpeg" },
-  { title: "OCI 2025 — AI Foundations Associate", img: "/certificates/Oracle cloud AI.jpeg" },
+{ title: "OCI 2025 — Generative AI Professional", img: "/certificates/Oracle cloud Generative AI.jpeg" },
+{ title: "Oracle AI Vector Search Certified Professional", img: "/certificates/Oracle AI Vector.jpeg" },
+{ title: "OCI 2025 — AI Foundations Associate", img: "/certificates/Oracle cloud AI.jpeg" },
 ];
 
 const hackerRankCerts: Cert[] = [
-  { title: "Python (Basic)", img: "/certificates/Python.png" },
-  { title: "SQL (Basic)", img: "/certificates/SQL Basic.png" },
-  { title: "C (Basic)", img: "/certificates/C Basic.png" },
-  { title: "Problem Solving (Basic)", img: "/certificates/Problem Solving.png" },
+{ title: "Python (Basic)", img: "/certificates/Python.png" },
+{ title: "SQL (Basic)", img: "/certificates/SQL Basic.png" },
+{ title: "C (Basic)", img: "/certificates/C Basic.png" },
+{ title: "Problem Solving (Basic)", img: "/certificates/Problem Solving.png" },
 ];
 
 interface SelectedCert {
