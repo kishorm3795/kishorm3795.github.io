@@ -1,11 +1,20 @@
-# Project Updates TODO
+# AchievementsSection Fixes TODO
 
-✅ **All steps completed:**
-- ✅ Updated ProjectsSection.tsx: Added GitHub links for G-M8, Guide-AI, CodeBuddy; changed to "View Project"; no link for Nano-PESU.
-- ✅ Updated HeroSection.tsx: Replaced ArrowDown with ArrowUp scroll-to-top button.
-- ✅ Hot-reload confirmed via Vite.
+## Plan Breakdown
+1. ✅ [DONE] Analyze file and create detailed edit plan (completed).
+2. ✅ [DONE] Create TODO.md with steps.
+3. ✅ [DONE] Edit src/components/AchievementsSection.tsx:
+   - Update renderCertGrid to accept title, subtitle, dateLabel props.
+   - Update Oracle and HackerRank calls with correct labels ("HackerRank Certifications" for 2nd column).
+   - Enhance modal with image error handling, click-to-open-new-tab on image, and "Open" button.
+4. ✅ [DONE] Verify setup:
+   - package.json uses npm scripts: "dev": "vite".
+   - Certificates exist: Python.png, SQL Basic.png, C Basic.png, Problem Solving.png match hackerRankCerts.
+   - Image paths /certificates/*.png correct for Vite public folder.
+   - Modal enhancements ensure "View Certificate" works (opens modal + new tab option).
+5. [PENDING] Run dev server and manual test recommended.
+6. [PENDING] Attempt completion.
+6. [PENDING] Attempt completion.
 
-Site live at http://localhost:8080/. Check projects links and top arrow.
-
-Done!
+**Current Status:** Ready for code edits.
 

@@ -32,14 +32,14 @@ const AchievementsSection = () => {
     setSelectedCert({ img: cert.img, title: cert.title });
   };
 
-  const renderCertGrid = (certs: Cert[], icon: React.ReactNode) => (
+const renderCertGrid = (certs: Cert[], icon: React.ReactNode, sectionTitle: string, subtitle: string, dateLabel: string) => (
     <div className="p-5 rounded-xl bg-black/40 border border-white/10 hover:border-cyan-400/30 transition-all">
       <div className="flex flex-wrap items-center gap-2 mb-4">
         {icon}
-        <h3 className="font-sans font-semibold text-xl text-white">Oracle Academy Certifications</h3>
+        <h3 className="font-sans font-semibold text-xl text-white">{sectionTitle}</h3>
       </div>
-      <p className="text-base text-cyan-400 font-medium mb-3">Oracle Academy</p>
-      <p className="text-sm text-white/80 mb-4">2025 · Professional Certifications</p>
+      <p className="text-base text-cyan-400 font-medium mb-3">{subtitle}</p>
+      <p className="text-sm text-white/80 mb-4">{dateLabel}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {certs.map((cert, j) => (
           <div key={j} className="flex flex-col gap-2 p-3 border border-white/10 rounded-lg hover:border-cyan-400/50 transition-all bg-black/20 hover:bg-black/30">
@@ -86,7 +86,7 @@ const AchievementsSection = () => {
               className="relative pl-8 border-l-2 border-white/10 hover:border-cyan-400/50 transition-colors"
             >
               <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 shadow-md" />
-{renderCertGrid(oracleCerts, <Award size={20} className="text-cyan-400" /> as JSX.Element)}
+{renderCertGrid(oracleCerts, <Award size={20} className="text-cyan-400" /> as JSX.Element, "Oracle Academy Certifications", "Oracle Academy", "2025 · Professional Certifications")}
             </motion.div>
 
             {/* HackerRank Timeline Box */}
@@ -98,7 +98,7 @@ const AchievementsSection = () => {
               className="relative pl-8 border-l-2 border-white/10 hover:border-cyan-400/50 transition-colors"
             >
               <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 shadow-md" />
-{renderCertGrid(hackerRankCerts, <Code2 size={20} className="text-cyan-400" /> as JSX.Element)}
+{renderCertGrid(hackerRankCerts, <Code2 size={20} className="text-cyan-400" /> as JSX.Element, "HackerRank Certifications", "HackerRank", "Basic Skills")}
             </motion.div>
           </div>
         </div>
@@ -123,19 +123,31 @@ const AchievementsSection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center px-6 py-4 border-b border-white/10">
-                <h3 className="text-xl font-bold text-white">{selectedCert.title}</h3>
-                <button 
-                  onClick={() => setSelectedCert(null)}
-                  className="p-2 rounded-lg hover:bg-white/10 transition-colors"
-                >
-                  <X size={24} />
-                </button>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-white flex-1">{selectedCert.title}</h3>
+                  <button 
+                    onClick={() => window.open(selectedCert.img, '_blank', 'noopener,noreferrer')}
+                    className="flex items-center gap-1 px-3 py-1.5 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 hover:text-white text-sm rounded-lg transition-all font-medium"
+                    title="Open in new tab or download"
+                  >
+                    <ExternalLink size={16} />
+                    Open
+                  </button>
+                  <button 
+                    onClick={() => setSelectedCert(null)}
+                    className="p-2 rounded-lg hover:bg-white/10 transition-colors ml-1"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
               </div>
               <div className="p-6 max-h-[70vh] overflow-auto">
                 <img 
                   src={selectedCert.img} 
                   alt={selectedCert.title}
-                  className="w-full h-auto max-h-[60vh] object-contain rounded-lg border border-white/10 mx-auto"
+                  className="w-full h-auto max-h-[60vh] object-contain rounded-lg border border-white/10 mx-auto cursor-pointer hover:scale-105 transition-transform"
+                  onClick={() => window.open(selectedCert.img, '_blank')}
+                  onError={(e) => console.error('Certificate image failed to load:', selectedCert.img, e)}
                 />
               </div>
             </motion.div>
