@@ -5,37 +5,37 @@ const projects = [
   {
     title: "Nano-PESU",
     description:
-      "Modern frontend dashboard for university AI learning agent. Interactive RAG-powered interface with asset management, contextual query results, and clickable hyperlinks to lecture slides/textbook sections.",
+      "AI-powered university learning dashboard built for PES University students. Features a RAG-powered chat interface that answers academic queries and links directly to lecture slides and textbook sections—making studying smarter and faster.",
     tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "TypeScript"],
     status: "In Progress",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
+    image: "/projects/nano-pesu.png",
   },
   {
     title: "G-M8",
     description:
-      "Frontend for real-time collaboration platform with dynamic team dashboards, live chat UI, and intuitive project tracking interface.",
+      "Real-time team collaboration platform with a dynamic kanban board, live user presence indicators, and an integrated team chat. Designed for project teams who need seamless coordination in one unified workspace.",
     tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     status: "Completed",
     github: "https://github.com/kishorm3795/G-M8",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&auto=format&fit=crop"
+    image: "/projects/gm8.png",
   },
   {
     title: "Guide-AI",
     description:
-      "AI tool recommender that suggests the best AI tool for user workflows — research, editing, coding, voice, and more.",
+      "Smart AI tool recommender that matches users to the best AI solutions for their workflow — from research and coding to voice, writing, and image generation. Cuts through AI tool overload with personalized suggestions from 50+ tools.",
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "Completed",
     github: "https://github.com/kishorm3795/Guide-AI",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+    image: "/projects/guide-ai.png",
   },
   {
     title: "CodeBuddy",
     description:
-      "AI-powered coding assistant with collaborative real-time code editing and curated learning resources.",
+      "AI-powered coding assistant with a split-screen interface — real-time collaborative code editing on the left, an AI chat panel with context-aware hints and fix suggestions on the right. Paired with curated learning resources for skill-building.",
     tech: ["React.js", "JavaScript", "MongoDB"],
     status: "In Progress",
     github: "https://github.com/kishorm3795/codebuddy",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
+    image: "/projects/codebuddy.png",
   },
 ];
 
@@ -63,22 +63,22 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
-              className="group flex flex-col p-5 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] relative overflow-hidden"
+              transition={{ delay: i * 0.12, duration: 0.5, ease: "easeOut" }}
+              className="group flex flex-col p-5 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] relative overflow-hidden"
             >
               {/* Top ambient glow on hover */}
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-400/0 to-transparent group-hover:via-cyan-400/50 transition-all duration-700" />
               
-              {/* GIF Image Container */}
+              {/* Project Image */}
               <div className="relative w-full h-56 md:h-64 mb-6 rounded-xl overflow-hidden border border-white/5 bg-black/50 group-hover:border-white/20 transition-colors duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10 pointer-events-none" />
                 <img 
                   src={project.image} 
-                  alt={`${project.title} preview`} 
+                  alt={`${project.title} preview`}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
-                {/* Floating Status Badge inside image */}
+                {/* Floating Status Badge */}
                 <div className="absolute top-4 right-4 z-20">
                   {project.status === "In Progress" ? (
                     <span className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-md text-cyan-400 border border-cyan-400/30 shadow-[0_0_10px_rgba(34,211,238,0.2)]">
@@ -102,7 +102,7 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tech.map((t) => (
                     <span
                       key={t}
@@ -113,18 +113,20 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-{project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-2 text-sm font-medium text-white/70 hover:text-cyan-400 transition-colors duration-300 group-hover:glow-text"
-                >
-                  <Github size={16} />
-                  View Project
-                  <ExternalLink size={14} className="ml-1 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                </a>
-              )}
+                <div className="flex items-center gap-4">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Github size={16} />
+                      GitHub
+                      <ExternalLink size={13} className="opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
